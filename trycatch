@@ -1,0 +1,98 @@
+// try{
+    
+//     //예외가 발생할 가능성이 있는 코드
+//     throw new Error('예외가 발생했습니다.');
+// } catch (error) {
+//     //예외가 발생했을 때 실행할 코드
+//     console.log('오류가 발생했습니다.')
+//     console.log(error)
+//     console.log(error.name)
+//     console.log(error.message)
+// }
+// finally{
+//     //예외 발생 여부와 상관없이 실행할 코드
+//     console.log(1)
+// }
+
+// const 예 = () =>{
+// try{
+//     console.log("여기 트라이 부분")
+    
+//     //예외가 발생할 가능성이 있는 코드
+//     // throw new Error('예외가 발생했습니다.');
+// } catch (error) {
+//     console.log("여기 캐치 부분")
+//     //예외가 발생했을 때 실행할 코드
+
+// }
+// finally{
+//     //예외 발생 여부와 상관없이 실행할 코드
+//     console.log("여긴 파이널리")
+// }
+// }
+
+// 예()
+
+//isRequired의 기능은 해당하는 매개변수가 없을 때 에러를 발생시키는 것입니다.
+//isRequired 함수는 매개변수 이름을 받아서 에러 메시지를 만들어서 에러를 발생시킵니다.
+//예제로 발신인 = "떙떙떙" 과 같이 기본 값을 설정해주는 데 기본값대신 isRequired를 넣어주면 
+//해당 속성에 내용이 없다는 뜻이므로 예외처리가 발생되는 원리 입니다.
+// function isRequired (이름) {throw `${이름} 매개변수에 문제가 있씁니다.`}
+
+// function 메일보내기 ({
+//     발신인 = isRequired("발신인")
+//     , 수신인 = isRequired("수신인")
+//     , 내용 = isRequired("내용")
+// }) {
+//     console.log(`발신인: ${발신인}, 수신인: ${수신인}, 내용: ${내용}`)
+// }
+
+// 메일보내기({
+//     발신인: "김코딩"
+//     , 수신인: "박디자이너"
+//     , 내용: ""
+// })
+
+
+
+// function 메일보내기({
+//     발신인 = '사용자',
+//     수신인 = '관리자',
+//     내용 = '문제가 발생했음!'
+// } = {}){
+//     console.log(`발신인: ${발신인}, 수신인: ${수신인}, 내용: ${내용}`)
+// }   
+// //함수의 매개변수가 객체일때는 기본값을 설정할 때 객체를 넣어주면 됩니다.
+// //위와같이 매개변수의 기본값을 객체로 설정하거나 함수를 호출할 때 객체를 넣어주면 됩니다.
+// 메일보내기()
+
+// words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+// const result = words.filter(function(배열속에있는단어들){
+//     return 배열속에있는단어들.length > 6
+// });
+
+// //에로우 펑션 사용 시 리턴을 생략할 수 있습니다. 또한 매개변수가 하나일 경우 괄호를 생략할 수 있습니다.
+// const result2 = words.filter(배열속에있는단어들 => 배열속에있는단어들.length > 6)
+
+// // console.log(result);
+
+// // console.log(result2)
+
+// //아래는 직접 만들고 뜯어보기
+
+// function myfilter(origin,callback){
+//     const result = [];
+//     for(let i = 0; i < origin.length; i++){
+//         if(callback(origin[i])){
+//             result.push(origin[i])
+//         }
+//     }
+//     return result
+// }
+
+// newWords = myfilter(words, function(배열속에있는단어들){
+//     return 배열속에있는단어들.length > 6
+// })
+
+// console.log(newWords)
